@@ -1,0 +1,78 @@
+/* ORIENTAL FONT STYLE */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+
+body {
+    background-color: black !important;
+    font-family: 'Marcellus', serif;
+}
+
+/* NAVBAR */
+.oriental-nav {
+    background-color: #000000 !important;
+    border-bottom: 2px solid #a34827;
+}
+
+.oriental-title {
+    font-family: 'Marcellus', serif;
+    letter-spacing: 1px;
+    color: #e6b800 !important;
+}
+
+/* HERO */
+.hero-section {
+    height: 60vh;
+    background: url('https://i.pinimg.com/1200x/f6/38/f9/f638f9f96c24adabb3ccd4b031a6541e.jpg') center/cover no-repeat;
+    position: relative;
+    border-bottom: 4px solid #a34827;
+}
+
+/* RECIPE CARD */
+.recipe-card {
+    background-color: black;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.recipe-card h5 {
+    color: #e6b800 !important;
+    margin-top: 15px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    border-color: red;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* MODAL */
+.oriental-modal {
+    background-color: #1b1b1b;
+    color: white;
+    border: 2px solid #a34827;
+}
+
+/* POPUP MESSAGE */
+.popup-message {
+    position: fixed;
+    top: -200px; /* hidden above screen */
+    left: 50%;
+    transform: translateX(-50%);
+    background: black;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: top 0.7s ease-out;
+    z-index: 9999;
+}
