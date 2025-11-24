@@ -1,97 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cuisine Recipe</title>
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmandaPortfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-dark bg-dark px-4 oriental-nav">
-        <a class="navbar-brand oriental-title" href="#">Oriental Cuisine</a>
-        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</button>
+    <nav>
+        <div class="logo">AmandaPortfolio</div>
+        <div class="menu">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero-section d-flex align-items-center justify-content-center text-center">
-        <div>
-            <h1 class="oriental-title display-4">Taste the Oriental Heritage</h1>
-            <p class="text-light">Authentic flavors inspired by Shanghai street cuisine.</p>
+    <!-- PROFILE -->
+    <div class="profile">
+        <img src="https://i.pinimg.com/736x/68/d5/10/68d5105822c4f033734abc585a52e079.jpg" alt="avatar">
+        <h1>AMANDA</h1>
+        <p class="subtitle">Hi! I'm Amanda, a third–semester university student majoring in Information Systems.</p>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm currently learning the basics of web development, UI/UX design, and small interactive projects for my coursework. I enjoy exploring how technology and design work together to create simple, clean, and user–friendly experiences.</p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2>My Projects</h2>
+
+        <div class="projects">
+            
+            <div class="project-card">
+                <img src="https://i.pinimg.com/1200x/17/06/c9/1706c9f16bd08eb5e03f1df3e0a94a1c.jpg">
+                <h3>UI/UX Design</h3>
+                <p>A collection of simple UI/UX design concepts created for coursework, focusing on clean layouts, soft colors, and user-friendly interfaces.</p>
+                <button class="btn" onclick="openProject(1)">View</button>
+            </div>
+
+            <div class="project-card">
+                <img src="https://i.pinimg.com/736x/47/cb/f9/47cbf9ba51cbf04e95dbdb4e326d7ab9.jpg">
+                <h3>Rock Paper Scissors</h3>
+                <p>A small and fun Rock–Paper–Scissors game made to explore basic coding logic and create a light, interactive experience.</p>
+                <button class="btn" onclick="openProject(2)">View</button>
+            </div>
         </div>
     </section>
 
-    <!-- RECIPE GRID -->
-    <div class="container my-5">
-        <h2 class="text-center mb-4 oriental-title">Featured Recipes</h2>
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
 
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="recipe-card" onclick="showDetail('Kung Pao Chicken')">
-                    <img src="https://i.pinimg.com/736x/f3/af/da/f3afda979e312880ec463d060e023aac.jpg" alt="">
-                    <h5 class="mt-3">Kung Pao Chicken</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="recipe-card" onclick="showDetail('Peking Roasted Duck')">
-                    <img src="https://foodwrite.co.uk/wp-content/uploads/2024/01/Peking-Duck_123rf_213843598_m_normal_none.jpg" alt="">
-                    <h5 class="mt-3">Peking Roasted Duck</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="recipe-card" onclick="showDetail('Xiao Long Bao')">
-                    <img src="https://static.thehoneycombers.com/wp-content/uploads/sites/2/2019/09/xiao-long-bao-singapore.png" alt="">
-                    <h5 class="mt-3">Xiao Long Bao</h5>
-                </div>
-            </div>
-        </div>
-    </div>
+    <form onsubmit="sendMessage(event)">
+        <label>Your Name</label>
+        <input type="text" id="name" placeholder="Your name..." required>
 
-    <!-- CONTACT MODAL -->
-    <div class="modal fade" id="contactModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content oriental-modal">
-                <div class="modal-header">
-                    <h5 class="modal-title oriental-title">Contact Us</h5>
-                    <button class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
+        <label>Your Email</label>
+        <input type="email" id="email" placeholder="Your email..." required>
 
-                <div class="modal-body">
-                    <form id="contactForm">
-                        <label>Name</label>
-                        <input type="text" id="name" class="form-control mb-2">
+        <label>Subject</label>
+        <input type="text" id="subject" placeholder="Subject (optional)...">
 
-                        <label>Email</label>
-                        <input type="email" id="email" class="form-control mb-2">
+        <label>Your Message</label>
+        <textarea id="message" rows="5" placeholder="Please type your message here..." required></textarea>
 
-                        <label>Message</label>
-                        <textarea id="message" class="form-control mb-3"></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
 
-                        <button type="submit" class="btn btn-danger w-100">Send</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- POPUP MESSAGE -->
-    <div id="popupMessage" class="popup-message">
-        <p class="mb-2">We will contact you soon!</p>
-        <small>Please get in touch with us through WhatsApp below</small>
-        <br><br>
-        <a href="https://wa.me/6280000000" class="btn btn-success mt-2">WhatsApp Us</a>
-    </div>
+    <footer>
+        © 2025 AmandaPortfolio
+    </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
 </html>
